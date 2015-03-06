@@ -111,7 +111,7 @@ public class EditEvent extends JFrame {
 		/*
 		 * Add event date row 
 		 */
-		format = new SimpleDateFormat("yyyy--MMMM--dd");
+		format = new SimpleDateFormat("MM/DD/YYYY");
 
 		eventDateLabel = new JLabel("Event Date: ", JLabel.TRAILING);
 		formPanel.add(eventDateLabel);

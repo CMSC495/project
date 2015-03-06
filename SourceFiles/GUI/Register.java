@@ -1,10 +1,12 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import javax.swing.AbstractAction;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -12,6 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
@@ -40,7 +43,39 @@ public class Register extends JFrame {
 	private JTextField pass;
 	private JTextField rePass;
 	private JButton fileButton;
-	private JButton register;
+	private final JButton register = new JButton(new AbstractAction("Register") {
+        @Override
+        public void actionPerformed( ActionEvent e ) {
+            Component frame = null;
+            // add Action
+            if (first.getText().equals(""))JOptionPane.showMessageDialog(frame,
+                    "First Name Must be Entered!");else {
+                if (last.getText().equals(""))JOptionPane.showMessageDialog(frame,
+                    "Last Name Must be Entered!");else{
+                    if (email.getText().equals(""))JOptionPane.showMessageDialog(frame,
+                    "Email Must be Entered!");else{
+                        if (dateTextField.getText().equals(""))JOptionPane.showMessageDialog(frame,
+                    "Date of Birth Must be Entered!");else{
+                            if (gender.getSelectedItem().equals(""))JOptionPane.showMessageDialog(frame,
+                    "Gender Must be Selected!");else{
+                            if (pass.getText().equals("")||rePass.getText().equals(""))JOptionPane.showMessageDialog(frame,
+                    "Password Fields cannot be Empty!");else{   
+                                if (pass.getText().equals(rePass.getText())){JOptionPane.showMessageDialog(frame,
+                    "Registration Successful!");
+                                        //code to add user to the dB would go here***
+                                        }else{
+                                   JOptionPane.showMessageDialog(frame,
+                    "Passwords do not Match!");
+                }
+                }
+                }
+                }
+                }
+                }
+            }
+        }
+    });
+                            
 	private JButton cancel;
 
 	// Set up panel
@@ -173,7 +208,6 @@ public class Register extends JFrame {
 		JPanel registerCancel = new JPanel (new GridLayout(1,2));
 		
 		//Add register button
-		register = new JButton("Register"); 
 		registerCancel.add(register);
 		
 		/*

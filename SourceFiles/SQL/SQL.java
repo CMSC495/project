@@ -1,3 +1,5 @@
+package project.SourceFiles.SQL;
+
 //STEP 1. Import required packages
 import java.sql.*;
 import java.util.LinkedHashMap;
@@ -16,6 +18,10 @@ public class SQL {
 		
 		//Establish connection to database
 	}
+        
+        public static void getConnection()throws SQLException{
+            
+        }
 
 	public static <T> LinkedHashMap <String,T> getMap(){
 		
