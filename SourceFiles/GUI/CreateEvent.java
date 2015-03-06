@@ -41,7 +41,6 @@ public class CreateEvent extends JFrame {
 	private JButton fileButton;
 	private JButton create;
 	private JButton cancel;
-        
 
 	public CreateEvent() {
 

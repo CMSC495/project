@@ -1,4 +1,3 @@
-//import project.SourceFiles.SQL.SQL;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -33,51 +32,41 @@ public class GUIDriver {
 		UIManager.setLookAndFeel(UIManager
 				.getCrossPlatformLookAndFeelClassName());
 
-		final Landing landing = new Landing();
-                landing.setLocationRelativeTo(null);
+		Landing landing = new Landing();
 		landing.setVisible(true);
 
-		final Register register = new Register();
-                register.setLocationRelativeTo(null);
+		Register register = new Register();
 		register.setVisible(false);
 
-		final Login login = new Login();
-                login.setLocationRelativeTo(null);
+		Login login = new Login();
 		login.setVisible(false);
 
-		final Homepage homepage = new Homepage();
-                homepage.setLocationRelativeTo(null);
+		Homepage homepage = new Homepage();
 		homepage.setVisible(false);
 
-		final CreateEvent creatEvent = new CreateEvent();
-                creatEvent.setLocationRelativeTo(null);
+		CreateEvent creatEvent = new CreateEvent();
 		creatEvent.setVisible(false);
 
-		final UpdateUser updateUser = new UpdateUser();
-                updateUser.setLocationRelativeTo(null);
+		UpdateUser updateUser = new UpdateUser();
 		updateUser.setVisible(false);
 
-		final EventPage event = new EventPage();
-                event.setLocationRelativeTo(null);
+		EventPage event = new EventPage();
 		event.setVisible(false);
 		
-		final EditEvent editEvent = new EditEvent();
-                editEvent.setLocationRelativeTo(null);
+		EditEvent editEvent = new EditEvent();
 		editEvent.setVisible(false);
 		
-		final AddUser addUser = new AddUser();
-                addUser.setLocationRelativeTo(null);
+		AddUser addUser = new AddUser();
 		addUser.setVisible(false);
-	
-                //not working
-	//	SQL conn = new SQL();
 		
-	//	try {
-	//		conn.getConnection();
-	//	} catch (SQLException e1) {
+		SQL conn = new SQL();
+		
+		try {
+			conn.getConnection();
+		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-	//		e1.printStackTrace();
-	//	}
+			e1.printStackTrace();
+		}
 
 		/*
 		 * Landing functionality
@@ -85,7 +74,6 @@ public class GUIDriver {
 
 		landing.getLogin().addActionListener(new ActionListener() {
 
-                        @Override
 			public void actionPerformed(ActionEvent e) {
 
 				landing.setVisible(false);
