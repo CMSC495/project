@@ -1,3 +1,6 @@
+/*
+* This class stores venue related information for the events that a user creates. 
+*/
 import java.awt.Image;
 import java.sql.Date;
 
